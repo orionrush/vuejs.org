@@ -183,7 +183,7 @@ The difference is that an element with `v-show` will always be rendered and rema
 
 `v-if` is also **lazy**: if the condition is false on initial render, it will not do anything - the conditional block won't be rendered until the condition becomes true for the first time.
 
-In comparison, `v-show` is much simpler - the element is always rendered regardless of initial condition, with CSS-based toggling.
+In comparison, `v-show` is much simpler - the element is always rendered regardless of initial condition, with CSS-based toggling. Because of this CSS-based toggling `v-show`, unlike `v-if`, will **not** effect the content of `<template>` elements, as `<template>` elements and their children are not directly rendered to the DOM.
 
 Generally speaking, `v-if` has higher toggle costs while `v-show` has higher initial render costs. So prefer `v-show` if you need to toggle something very often, and prefer `v-if` if the condition is unlikely to change at runtime.
 
